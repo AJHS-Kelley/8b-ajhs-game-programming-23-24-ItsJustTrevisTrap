@@ -1,6 +1,6 @@
 # Hangman Game by Trevis Brown, v0.1
 import random
-# words = 'Acid Knife Bones Bleach Reptile Banshee Spirit Spider Snake Disease Skull Photosynthesis Mental Flatline Havoc Yamaha Glove Lime Green Teal Eyes Teeth Cell Blood Phobia Venus Saturn Kawasaki Kill Wendigo'.split()
+# words = ['Acid Knife Bones Bleach Reptile Banshee Spirit Spider Snake Disease Skull Photosynthesis Mental Flatline Havoc Yamaha Glove Lime Green Teal Eyes Teeth Cell Blood Phobia Venus Saturn Kawasaki Kill Wendigo'].split()
 # DICTIONARY VERSION
 # Stored in Key: Value Pairs.
 # Actual Dictionary Word (Key) : Value (Definition)
@@ -121,7 +121,7 @@ while difficulty not in 'EMH':
 if difficulty == 'M': # Medium
     del HANGMAN_BOARD[]
     del HANGMAN_BOARD[]
-    
+if difficulty == 'H'
     del HANGMAN_BOARD[]
     del HANGMAN_BOARD[]
     del HANGMAN_BOARD[]
