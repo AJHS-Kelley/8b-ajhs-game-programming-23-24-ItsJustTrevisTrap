@@ -5,10 +5,12 @@ import random
 # Stored in Key: Value Pairs.
 # Actual Dictionary Word (Key) : Value (Definition)
 # Uses {} to specify a dictionary.
-words = {'Colors': 'green lime yellow blue cyan indigo black gold white silver navy grey orange teal'.split(),
-         'Animals': 'gecko shark parrot ant cat jellyfish spider mantis iguana bee wasp zebra hyena panda'.split(),
-         'Shapes': 'square triangle circle cube trapizoid sphere diamond rectangle octogon'.split(),
-         'Foods': 'fries milkshake apple pineapple grape watermelon lemon lime kiwi corn dragonfruit strawberry'.split()}
+words = {
+            'Colors': 'green lime yellow blue cyan indigo black gold white silver navy grey orange teal'.split(),
+            'Animals': 'gecko shark parrot ant cat jellyfish spider mantis iguana bee wasp zebra hyena panda'.split(),
+            'Shapes': 'square triangle circle cube trapizoid sphere diamond rectangle octogon'.split(),
+            'Foods': 'fries milkshake apple pineapple grape watermelon lemon lime kiwi corn dragonfruit strawberry'.split()
+        }
 
 
 #VARIABLE_NAMES in ALL-CAPS ARE CONSTANTS AND NOT MEANT TO CHANGE!
@@ -66,9 +68,10 @@ HANGMAN_BOARD = ['''
 #     # len(listName) - 1 is EXTREMELY COMMON FOR WORKING WITH LISTS.
 #     return wordList[wordIndex]
 
+# Pick Word from Dictionary
 def getRandomWord(wordDict): # Return a random word from the list.
     wordKey = random.choice(list(wordDict.keys()))
-    wordIndex = random.randint(0, len(wordDict[wordKey] - 1))
+    wordIndex = random.randint(0, len(wordDict[wordKey]) - 1)
     return [wordDict[wordKey][wordIndex], wordKey]
 
 def displayBoard(missedLetters, correctLetters, secretWord):
@@ -115,22 +118,23 @@ print('Welcome to the Game by Trevis.')
 
 # Choose Difficulty
 difficulty = 'X'
-while difficulty not in 'EMH':
+while difficulty not in 'EMH': # You are only checking for the first letter as a capital.  
     print('Please Choose Easy, Medium, or Hard. Type the first letter then press enter.\n')
     difficulty = input().upper()
 if difficulty == 'M': # Medium
-    del HANGMAN_BOARD[]
-    del HANGMAN_BOARD[]
-if difficulty == 'H'
-    del HANGMAN_BOARD[]
-    del HANGMAN_BOARD[]
-    del HANGMAN_BOARD[]
-    del HANGMAN_BOARD[]
+    del HANGMAN_BOARD[8]
+    del HANGMAN_BOARD[7]
+if difficulty == 'H': 
+    del HANGMAN_BOARD[8]
+    del HANGMAN_BOARD[7]
+    del HANGMAN_BOARD[5]
+    del HANGMAN_BOARD[3]
 
 
-missedLetters = ' '
-correctLetters = ' '
-secretWord = getRandomWord(words)
+missedLetters = ''
+correctLetters = ''
+secretWord, secretSet = getRandomWord(words)
+print (secretWord)
 gameIsDone = False
 
 # Main Game Loop
@@ -155,17 +159,17 @@ while True:
     else:
         missedLetters = missedLetters + guess
 
-        if len(missedLetters) == lens(HANGMAN_BOARD) - 1:
+        if len(missedLetters) == len(HANGMAN_BOARD) - 1:
             displayBoard(missedLetters, correctLetters, secretWord)
             print('You have run out of guesses and lost the game.')
             print('You made this number of correct guesses' + str(len(correctLetters)))
-            print('the secret word was' + secretWord)
+            print('The secret word was' + secretWord)
             gameIsDone = True
 
     if gameIsDone:
         if playAgain():
-            missedLetters = ' '
-            correctLetters = ' '
+            missedLetters = ''
+            correctLetters = ''
             
 # i = 0
 # while i < 50:
