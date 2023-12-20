@@ -43,6 +43,13 @@ car_x = width // 2 - car_width // 2
 car_y = height - car_height - 10
 car_speed = 5
 
+# Set up track
+track_length = 500
+track_time = 180
+track_width = 250
+
+
+
 
 
 
