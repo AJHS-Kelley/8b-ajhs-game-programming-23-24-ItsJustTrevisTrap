@@ -8,7 +8,7 @@ class Person: # Use PascalCase for ClassNames
 
 # To String Function -- How the object appears as a string.
 def __str__(self):
-    return f"Name: {self.name}\nThis person is {self.age} years old.\nThey weigh {self.weight}" p
+    return f"Name: {self.name}\nThis person is {self.age} years old.\nThey weigh {self.weight}"
 
 def classFunction():
     print("This is an example class function")
@@ -24,7 +24,7 @@ if person1.weight > person2.weight:
 elif person1.weight == person2.weight:
     print("Each person weighs the same.\n")
 else:
-    print(f"{person2.name} weighs more than {}")
+    print(f"{person2.name} weighs more than {person1.me}")
 
 person1.classFunction()
 
