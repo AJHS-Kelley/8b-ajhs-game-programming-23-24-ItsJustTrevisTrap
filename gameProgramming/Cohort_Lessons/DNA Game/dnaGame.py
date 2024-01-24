@@ -1,5 +1,9 @@
 # DNA Replication Game, Trevis Brown, v0.0
 # Import specific Methods -- Get the Specific tool.
+
+# Trevis you have a single commit on GitHub of almost 80 lines of code for this project. 
+# That is a red-flag that you copy-pasted the work from another student.  
+
 from random import choice
 
 # Store the DNA Bases
