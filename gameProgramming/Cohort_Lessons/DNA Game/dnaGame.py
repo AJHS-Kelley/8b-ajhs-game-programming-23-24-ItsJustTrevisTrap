@@ -54,7 +54,7 @@ def verifySequence(dnaSequence: str, rnaSequence: str) -> bool:
         elif dnaBase == "T" and rnaBase == "A":
             isMatch = True
         else:
-        print("Unable to identify correct base so no match.\n")
+            print("Unable to identify correct base so no match.\n")
     return isMatch
 
 def calcScore(rnaSequence: str, rnaTime: float) -> int:
