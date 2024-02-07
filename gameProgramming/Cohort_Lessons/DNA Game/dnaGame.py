@@ -1,9 +1,9 @@
 # DNA Replication Game, Trevis Brown, v0.0
-# Import specific Methods -- Get the Specific tool.
 
-# Trevis you have a single commit on GitHub of almost 80 lines of code for this project. 
-# That is a red-flag that you copy-pasted the work from another student.  
+# Import Entire Modules -- Get the whole tool box.
+import time, datetime
 
+# Import Specific Methods -- Get the specific tool.
 from random import choice
 
 # Store the DNA Bases
@@ -17,17 +17,14 @@ def genDNA() -> str:
     basesGenerated = 0
     basesRequested = int(input("Please enter a positive integer of bases to generate.\n"))
     dnaSequence = ""
-
     while basesGenerated < basesRequested:
       dnaSequence += choice(dnaBases)
       basesGenerated += 1
-    return "STRING"
-
-dna = genDNA()
+    return dnaSequence
 
 def doTranscription(dnaSequence: str) -> tuple:
     
-    print(f"The DNA Sequence is (dnaSequence).\n")
+    print(f"The DNA Sequence is {dnaSequence}.\n")
     print("You will now generate the RNA Sequence that would match.\n")
     print("Please remember, in the RNA sequence U pairs with A from the DNA sequence.\n")
     rnaStart = time.time() #time.time() returns the number of seconds since 00:00:00 Jan 01, 1970
@@ -69,43 +66,42 @@ def calcScore(rnaSequence: str, rnaTime: float) -> int:
         score += 500000
     else: # Slowest time, Lowest Score
         score += 250000
+
+    scoreMulti = 0.0
+    if len("rnaSequence") >= 30: # Longest Sequence, Highest Multiplier
+       scoreMulti = 4.2
+    elif len("rnaSequence") >= 25:  # Longest Sequence, Highest Multiplier
+       scoreMulti = 3.5
+    elif len("rnaSequence") >= 20:  # Longest Sequence, Highest Multiplier
+       scoreMulti = 2.8
+    elif len("rnaSequence") >= 15:  # Longest Sequence, Highest Multiplier
+       scoreMulti = 2.1
+    elif len("rnaSequence") >= 5:  # Longest Sequence, Highest Multiplier
+       scoreMulti = 1.0
+    else: # Shortest Sequence, Lowest Multiplier
+       scoreMulti = 0.5
+    # Increase score, multiplier should be > 1.0
+    # Decrease score, multiplier should be < 1.0
+    score *= scoreMulti
     return score
 
-scoreMulti = 0.0
-if len("rnaSequence") >= 30: # Longest Sequence, Highest Multiplier.
-   scoreMulti = 4.2
-elif len("rnaSequence") >= 25:  
-   scoreMulti = 3.5
-elif len("rnaSequence") >= 20:
-   scoreMulti = 2.8
-elif len("rnaSequence") >= 15:
-   scoreMulti = 2.1
-elif len("rnaSequence") >= 5:
-   scoreMulti = 1.4
-else:
-   scoreMulti = 0.7
-  #
-  #
- score *= scoreMulti
-return score
+def saveScore(dnaSequence: str, rnaSequence: str, rnaTime: float, score: int) -> None:
+    playerName = input("What is your first Name?\n")
+    lastName = input("What is your last Name?\n")
+    fullName = playerName + " " + lastName
 
-def saveScore(dnaSequence: str, rnaSequence: str, rnaTime: float, score: float): -> None:
-playerName = input("What is your first Name?\n")
-lastName = input("What is your last Name"?\n)
- fullName = playerName + " " + lastName
-
- fileName = "dnaReplicationScore" + fullName +".txt"
- saveData = oprm(filrNs,e, "a")
- saveData.write(f"DNA sequence : {dnaSequence}\nRNA Sequence : {rnaSequence}\n)"
- saveData.write(f"Transcription Time: {rnaTime}\n")  
- saveData.write(f"Score : {score}\n")
- saveData.write(f "{fullName}\n")
- saveData.write(f"{datetime.datetime.now()}\n")
- saveData.close()
-
-
-
-
+    fileName = "dnaReplicationScore" + fullName +".txt"
+    saveData = oprm(filrNs,e, "a")
+    # File Modes
+    # "x" mode -- CREATE FILE, IF FILE EXISTS, EXIT WITH ERROR
+    # "w" mode -- CREATE FILE, IF FILE EXISTS, OVERWRITE IT
+    # "a" mode -- CREATE FILE, IF FILE EXISTS, APPEND TO IT
+    saveData.write(f"\nScore Generated: {datetime.datetime.now()}\n")
+    saveData.write(f"Player: {fullName}\n")
+    saveData.write(f"DNA Sequence: {dnaSequence}\nRNA Sequence: {rnaSequence}\n")
+    saveData.write(f"Transcription Time: {rnaTime}\n")
+    saveData.write(f"Score: {score}\n")
+    saveData.close()
 
 
 
