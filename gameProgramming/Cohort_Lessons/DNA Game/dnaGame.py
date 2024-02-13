@@ -91,7 +91,7 @@ def saveScore(dnaSequence: str, rnaSequence: str, rnaTime: float, score: int) ->
     fullName = playerName + " " + lastName
 
     fileName = "dnaReplicationScore" + fullName +".txt"
-    saveData = oprm(filrNs,e, "a")
+    saveData = open(fileName, "a")
     # File Modes
     # "x" mode -- CREATE FILE, IF FILE EXISTS, EXIT WITH ERROR
     # "w" mode -- CREATE FILE, IF FILE EXISTS, OVERWRITE IT

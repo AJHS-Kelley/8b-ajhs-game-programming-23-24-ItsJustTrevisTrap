@@ -1,0 +1,7 @@
+
+Score Generated: 2024-02-13 14:02:42.320543
+Player: T L
+DNA Sequence: AAC
+RNA Sequence: UUG
+Transcription Time: 20.76312255859375
+Score: 500000.0
