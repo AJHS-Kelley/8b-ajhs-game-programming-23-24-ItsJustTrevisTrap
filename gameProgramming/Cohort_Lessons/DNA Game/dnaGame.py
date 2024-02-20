@@ -4,7 +4,7 @@
 import time, datetime
 
 # Import Specific Methods -- Get the specific tool.
-from random import choice
+from random import choice 
 
 # Store the DNA Bases
 dnaBases = ["A", "T", "G", "C"]
