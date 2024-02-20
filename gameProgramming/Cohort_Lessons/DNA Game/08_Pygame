@@ -1,5 +1,7 @@
 import pygame
 from sys import exit
+# Trevis you are significantly behind and are spending a significant part of class browsing videos on your phone.
+# It will be impossible to succeed with this project if you're on your phone the whole time. 
 
 pygame.init()
 screen = pygame.display.set_mode((800,400))
@@ -30,7 +32,7 @@ while True:
     if snail_x_pos < -100:snail_x_pos = 800
 
 
-    pygame.display.update()
+    pygame.display.update() # YOU SHOULD NOT CALL THIS FUNCTION MORE THAN ONCE PER LOOP!  Delete one of them. 
     
     # update everything
     pygame.display.update()
