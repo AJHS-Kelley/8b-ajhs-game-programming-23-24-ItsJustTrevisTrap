@@ -260,7 +260,7 @@ if game_active:
 		game_active = collision_sprite()
 		# game_active = collisions(player_rect,obstacle_rect_list)
 		
-	else:
+else:
 		screen.fill((94,129,162))
 		screen.blit(player_stand,player_stand_rect)
 		obstacle_rect_list.clear()
@@ -274,8 +274,8 @@ if game_active:
 		if score == 0: screen.blit(game_message,game_message_rect)
 		else: screen.blit(score_message,score_message_rect)
 
-	pygame.display.update()
-	clock.tick(60)
+pygame.display.update()
+clock.tick(60)
 
 
 
