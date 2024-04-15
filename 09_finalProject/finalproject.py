@@ -1,6 +1,6 @@
 # Final Project, Trevis brown, v0.0
-import sys
- 
+import pygame
+from sys import exit
 
 
 
