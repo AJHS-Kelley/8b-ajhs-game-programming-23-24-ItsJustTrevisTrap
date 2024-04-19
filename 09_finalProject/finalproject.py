@@ -1,12 +1,12 @@
-# Final Project, Trevis brown, v0.0
 import pygame
 from sys import exit
+
 pygame.init()
 screen = pygame.display.set_mode((800,400))
 pygame.display.set_caption('Runner')
 clock = pygame.time.Clock()
 
-test_surface = pygame.surface((100,900))
+test_surface = pygame.Surface((900,500))
 test_surface.fill('Grey')
 
 while True:
