@@ -1,3 +1,5 @@
+# Trevis you have almost nothing done at all for this project after almost three weeks of classtime. 
+
 import pygame
 import random
 
