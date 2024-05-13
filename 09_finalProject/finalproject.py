@@ -1,7 +1,23 @@
-# Trevis you have almost nothing done at all for this project after almost three weeks of classtime. 
+# Trevis Brown
 
 import pygame
 import random
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #Constants
 WIDTH = 800
@@ -44,11 +60,52 @@ player_y = CELL_SIZE // 2
 # Main loop
 running = True
 while running:
-    for event in
-pygame.event.get():
-if event.type == 
-pygame.QUIT:
-running = False
+    for event in pygame.event.get():
+         if event.type == pygame.QUIT:
+             running = False
+
+sky_surface = pygame.image.load('img/maze.png').convert_alpha()
+
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            exit()
+# Player movement
+
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT]:
+        if maze[player_y // CELL_SIZE][player_x // CELL_SIZE 1] == 0:
+            player_x -= CELL_SIZE
+        elif keys[pygame.K_RIGHT]:
+            if maze[player_y // CELL_SIZE][player_x // CELL_SIZE + 1] == 0:
+                player_x += CELL_SIZE
+        elif keys[pygame.K_UP]:
+            if maze[player_y // CELL_SIZE - 1][player_x // CELL_SIZE] == 0:
+                player_y -= CELL_SIZE
+        elif keys[pygame.K_DOWN]:
+            if maze[player_y // CELL_SIZE + 1][player_x // CELL_SIZE] == 0:
+                player_y += CELL_SIZE
+
+    # Draw maze
+    screen.fill(BLACK)
+    for y in range(ROWS):
+        for x in range(COLS):
+            if maze[y][x] == 1: pygame.draw.rect(screen, WHITE, (x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE))
+
+    # Draw player
+    pygame.draw.circle(screen, GREEN, (player_x, player_y), PLAYER_SIZE)
+
+    pygame.display.flip()
+    clock.tick(60)
+
+    pygame.quit
+
+
+
+
+
+
 
 
 
