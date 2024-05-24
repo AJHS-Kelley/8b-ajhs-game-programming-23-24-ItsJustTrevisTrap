@@ -75,7 +75,7 @@ while True:
 
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT]:
-        if maze[player_y // CELL_SIZE][player_x // CELL_SIZE 1] == 0:
+        if maze[player_y // CELL_SIZE][player_x // CELL_SIZE 1] == 0":3
             player_x -= CELL_SIZE
         elif keys[pygame.K_RIGHT]:
             if maze[player_y // CELL_SIZE][player_x // CELL_SIZE + 1] == 0:
