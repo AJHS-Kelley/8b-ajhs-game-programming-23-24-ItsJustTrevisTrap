@@ -3,22 +3,6 @@
 import pygame
 import random
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #Constants
 WIDTH = 800
 HEIGHT = 600
@@ -75,7 +59,7 @@ while True:
 
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT]:
-        if maze[player_y // CELL_SIZE][player_x // CELL_SIZE 1] == 0:
+        if maze[player_y // CELL_SIZE][player_x // CELL_SIZE + 1] == 0:
             player_x -= CELL_SIZE
         elif keys[pygame.K_RIGHT]:
             if maze[player_y // CELL_SIZE][player_x // CELL_SIZE + 1] == 0:
@@ -98,8 +82,8 @@ while True:
 
     pygame.display.flip()
     clock.tick(60)
-
-    pygame.quit
+    #pygame.display.update()
+    #pygame.quit
 
 
 
